@@ -1,26 +1,33 @@
+import { type } from 'os'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// React component (Function)
-const Title = () => {
-    return <h1>Hello App.js</h1>
+interface ITitleProps {
+    text: string
+}
+type ContentProps = {
+    text1: string
+    text2: string
+    year: number
+
 }
 
-const Content = () => {
+const Title = (props: ITitleProps) => {
+    console.log(props)
+    return <h1>Hello {props.text}</h1>
+}
+
+const Content = (props: ContentProps) => {
+    console.log(props)
     return (
         <React.Fragment>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit illum asperiores blanditiis accusantium nesciunt
-                quisquam voluptatibus laudantium? Porro totam obcaecati omnis
-                ipsum rem, ut deserunt fugiat eligendi accusantium commodi ex.
+                {props.text1}
             </p>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aperiam atque ipsum sequi omnis obcaecati eveniet quasi illo
-                soluta voluptas cum! Pariatur officiis laborum enim qui quis
-                minima itaque rem sed!
+                {props.text2}
             </p>
+            <div>Year: {props.year}</div>
         </React.Fragment>
     )
 }
@@ -28,8 +35,9 @@ const Content = () => {
 function App() {
     return (
         <>
-            <Title />
-            <Content />
+            <Title text='React' />
+            <Title text='TS' />
+            <Content text1='Hello World 1' text2='Hello world 2' year={2023}/>
         </>
     )
 }
