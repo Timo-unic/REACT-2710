@@ -3,11 +3,11 @@ type Props = {
     text2: string
     year: number
 }
-const Content = (props: Props) => {
+export const Content = (props: Props) => {
   return  <React.Fragment>
   <p>{props.text1}</p>
   <p>{props.text2}</p>
   <div>Year: {props.year}</div>
 </React.Fragment>
 }
-export default Content
+// export default Content
