@@ -4,9 +4,10 @@ type Props = {
     year: number
 }
 export const Content = (props: Props) => {
+  let data = true
   return  <>
   <p style={{
-    color: 'white',
+    color: data ? 'yellow' : 'white',
     background: 'green',
     padding: '15px',
 
