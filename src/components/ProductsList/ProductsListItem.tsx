@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardActions } from "@mui/material"
+import { Button, Card, CardContent, CardActions } from '@mui/material'
 import './ProductsListItem.scss'
 
 type Props = {
@@ -9,21 +9,27 @@ type Props = {
     price: number
 }
 
-const ProductsListItem = ({title, description, type, capacity, price}: Props) => {
-  return (
-    <Card variant="outlined" className="product">
-        <CardContent>
-            <div className="product-title">{title}</div>
-            <div className="product-desc">{description}</div>
-            <div className="product-features">Type: {type}</div>
-            <div className="product-features">Capacity: {capacity} Gb</div>
-            <div className="product-price">{price}$</div>
-        </CardContent>
-        <CardActions className="product-btn-wrap">
-            <Button variant="outlined">Add to cart</Button>
-        </CardActions>
+const ProductsListItem = ({
+    title,
+    description,
+    type,
+    capacity,
+    price,
+}: Props) => {
+    return (
+        <Card variant="outlined" className="product">
+            <CardContent>
+                <div className="product-title">{title}</div>
+                <div className="product-desc">{description}</div>
+                <div className="product-features">Type: {type}</div>
+                <div className="product-features">Capacity: {capacity} Gb</div>
+                <div className="product-price">{price}$</div>
+            </CardContent>
+            <CardActions className="product-btn-wrap">
+                <Button variant="outlined">Add to cart</Button>
+            </CardActions>
         </Card>
-  )
+    )
 }
 
 export default ProductsListItem
