@@ -7,8 +7,8 @@ type Props = {}
 const ProductsList = (props: Props) => {
     return (
         <>
-            <Typography variant="h4" align="center" component="h2">
-                ProductsList
+            <Typography variant="h4" align="center" component="h2" sx={{marginBottom: '40px'}}>
+                Products List
             </Typography>
             <Grid container spacing={3}>
                 {productsArray.map(
