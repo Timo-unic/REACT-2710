@@ -1,4 +1,5 @@
 import { Button, Card, CardContent, CardActions, TextField } from '@mui/material'
+import { type } from '@testing-library/user-event/dist/type'
 import { Component } from 'react'
 import './ProductsListItem.scss'
 
@@ -11,7 +12,17 @@ type Props = {
     image: string
 }
 
-class ProductsListItem extends Component<Props> {
+type State = {
+    count: number
+}
+
+class ProductsListItem extends Component<Props, State> {
+    constructor(props: Props) {
+        super(props)
+        this.state = {
+            count: 1,
+        }
+    }
     render() {
         const {title, description, type, capacity, price, image,} = this.props
         return (
@@ -27,7 +38,7 @@ class ProductsListItem extends Component<Props> {
                     <div className="product-price">{price}$</div>
                     <div className="product-quantity">
                         <Button variant='outlined'>-</Button>
-                        <TextField size='small' value={1} />
+                        <TextField size='small' value={this.state.count} />
                         <Button variant='outlined'>+</Button>
                     </div>
                 </CardContent>
