@@ -22,7 +22,16 @@ class ProductsListItem extends Component<Props, State> {
         this.state = {
             count: 1,
         }
+        this.onIncrementClick = this.onIncrementClick.bind(this)
     }
+
+    onIncrementClick() {
+        console.log(this)
+        this.setState({
+            count: 2,
+        })
+    }
+
     render() {
         const {title, description, type, capacity, price, image,} = this.props
         return (
@@ -39,7 +48,7 @@ class ProductsListItem extends Component<Props, State> {
                     <div className="product-quantity">
                         <Button variant='outlined'>-</Button>
                         <TextField size='small' value={this.state.count} />
-                        <Button variant='outlined'>+</Button>
+                        <Button variant='outlined' onClick={this.onIncrementClick}>+</Button>
                     </div>
                 </CardContent>
                 <CardActions className="product-btn-wrap">
