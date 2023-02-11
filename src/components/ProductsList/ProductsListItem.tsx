@@ -17,22 +17,17 @@ type State = {
 }
 
 class ProductsListItem extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = {
-            count: 1,
-        }
-        this.onIncrementClick = this.onIncrementClick.bind(this)
-        this.onDecrementClick = this.onDecrementClick.bind(this)
+    state = {
+        count: 1,
     }
 
-    onIncrementClick() {
+    onIncrementClick = () => {
         this.setState((prevState: State) => ({
             count: prevState.count + 1,
         }))
     }
 
-    onDecrementClick() {
+    onDecrementClick = () => {
         this.setState((prevState: State) => ({
             count: prevState.count - 1,
         }))
