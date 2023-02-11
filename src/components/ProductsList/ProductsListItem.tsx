@@ -1,4 +1,5 @@
 import { Button, Card, CardContent, CardActions, TextField } from '@mui/material'
+import { green } from '@mui/material/colors'
 import { type } from '@testing-library/user-event/dist/type'
 import { Component } from 'react'
 import './ProductsListItem.scss'
@@ -14,16 +15,18 @@ type Props = {
 
 type State = {
     count: number
+    color: string
 }
 
 class ProductsListItem extends Component<Props, State> {
     state = {
         count: 1,
+        color: 'green',
     }
 
-    onIncrementClick = (num: number) => {
+    onIncrementClick = () => {
         this.setState((prevState: State) => ({
-            count: prevState.count + num,
+            count: prevState.count + 1,
         }))
     }
 
@@ -31,6 +34,12 @@ class ProductsListItem extends Component<Props, State> {
         this.setState((prevState: State) => ({
             count: prevState.count - 1,
         }))
+    }
+
+    changeColor = () => {
+        this.setState({
+            color: 'red',
+        })
     }
 
     render() {
@@ -45,11 +54,13 @@ class ProductsListItem extends Component<Props, State> {
                     <div className="product-desc" dangerouslySetInnerHTML={{__html: description}}></div>
                     <div className="product-features">Type: {type}</div>
                     <div className="product-features">Capacity: {capacity} Gb</div>
+                    <p>Color: {' '} <span className={this.state.color}>{this.state.color}</span></p>
+                    <button onClick={this.changeColor}>Change color</button>
                     <div className="product-price">{price}$</div>
                     <div className="product-quantity">
                         <Button variant='outlined' onClick={this.onDecrementClick}>-</Button>
                         <TextField size='small' value={this.state.count} />
-                        <Button variant='outlined' onClick={() => this.onIncrementClick(3)}>+</Button>
+                        <Button variant='outlined' onClick={() => this.onIncrementClick()}>+</Button>
                     </div>
                 </CardContent>
                 <CardActions className="product-btn-wrap">
