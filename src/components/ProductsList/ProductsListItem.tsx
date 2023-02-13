@@ -1,4 +1,5 @@
 import { Button, Card, CardContent, CardActions, TextField } from '@mui/material'
+import { useState } from 'react'
 import './ProductsListItem.scss'
 
 type Props = {
@@ -18,7 +19,16 @@ const ProductsListItem = ({
     price,
     image,
 }: Props) => {
-    return (
+    const [count, setCount] = useState<number>(1)
+
+    const onIncrement = () => {
+        setCount(count + 1)
+    }
+    const onDecrement = () => {
+        setCount(count - 1)
+    }
+
+        return (
         <Card variant="outlined" className="product">
             <CardContent>
                 <div className="product-image">
@@ -30,9 +40,9 @@ const ProductsListItem = ({
                 <div className="product-features">Capacity: {capacity} Gb</div>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button variant='outlined'>-</Button>
-                    <TextField size='small' value={1} />
-                    <Button variant='outlined'>+</Button>
+                    <Button variant='outlined' onClick={() => onDecrement()}>-</Button>
+                    <TextField size='small' value={count} />
+                    <Button variant='outlined' onClick={() => onIncrement()}>+</Button>
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
