@@ -12,22 +12,22 @@ type Props = {}
 
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" className='app-bar'>
-          <Container>
-            <Toolbar>
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Logo/>
-                <Menu/>
-                <CartHeader/>
-            </Toolbar>
+        <AppBar position="static" className="app-bar">
+            <Container>
+                <Toolbar>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Logo />
+                    <Menu />
+                    <CartHeader />
+                </Toolbar>
             </Container>
         </AppBar>
     )
