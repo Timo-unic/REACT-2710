@@ -10,7 +10,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
     return (
         <>
             <Typography variant="h4" align="center" component="h2">
-                ProductsList
+                Products List
             </Typography>
             <Grid container spacing={3}>
                 {productsArray.map(
