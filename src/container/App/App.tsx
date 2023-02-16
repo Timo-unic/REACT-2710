@@ -7,6 +7,7 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
 
 type Props = {}
+
 type CartDataProps = {
     totalCount: number
     totalPrice: number
