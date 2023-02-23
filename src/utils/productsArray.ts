@@ -74,5 +74,4 @@ export const getProductsObject = (array: Product[]) =>
         {}
     )
 
-
 export default productsArray

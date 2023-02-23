@@ -12,4 +12,5 @@ const CartProductListItem = ({ product, productCount }: Props) => {
         </div>
     )
 }
+
 export default CartProductListItem

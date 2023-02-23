@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, Grid } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete'
 import { Product } from 'utils/productsArray'
 
 type Props = {
@@ -8,7 +8,11 @@ type Props = {
     removeProductFromCart: (id: number) => void
 }
 
-const CartProductListItemExtended = ({ product, productCount, removeProductFromCart }: Props) => {
+const CartProductListItemExtended = ({
+    product,
+    productCount,
+    removeProductFromCart,
+}: Props) => {
     return (
         <Grid item xs={12} sm={4}>
             <Card>
@@ -21,13 +25,13 @@ const CartProductListItemExtended = ({ product, productCount, removeProductFromC
                     <p>Count: {productCount}</p>
                 </CardContent>
                 <CardActions>
-                <Button 
-                variant='outlined'
-                onClick={() => removeProductFromCart(product.id)}>
-                    <DeleteIcon/>
-                </Button>
+                    <Button
+                        variant="outlined"
+                        onClick={() => removeProductFromCart(product.id)}
+                    >
+                        <DeleteIcon />
+                    </Button>
                 </CardActions>
-                
             </Card>
         </Grid>
     )

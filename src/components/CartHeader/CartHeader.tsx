@@ -7,12 +7,10 @@ type Props = {
     }
 }
 
-const CartHeader = ({
-    productsInCart,
-}: Props) => {
+const CartHeader = ({ productsInCart }: Props) => {
     return (
         <div>
-            <CartProductList productsInCart={productsInCart}/>
+            <CartProductList productsInCart={productsInCart} />
             <CartTotal productsInCart={productsInCart} />
         </div>
     )

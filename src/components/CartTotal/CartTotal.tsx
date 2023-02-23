@@ -9,10 +9,10 @@ type Props = {
     }
 }
 
-const CartTotal = ({ 
-    productsInCart, 
-    productsObject=getProductsObject(productsArray),
- }: Props) => {
+const CartTotal = ({
+    productsInCart,
+    productsObject = getProductsObject(productsArray),
+}: Props) => {
     return (
         <div>
             Total:{' '}
@@ -27,4 +27,5 @@ const CartTotal = ({
         </div>
     )
 }
+
 export default CartTotal

@@ -37,4 +37,5 @@ const Header = ({ productsInCart }: Props) => {
         </AppBar>
     )
 }
+
 export default Header

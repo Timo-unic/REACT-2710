@@ -18,4 +18,5 @@ const Menu = (props: Props) => {
         </>
     )
 }
+
 export default Menu

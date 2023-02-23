@@ -31,4 +31,5 @@ const CartProductList = ({
         </>
     )
 }
+
 export default CartProductList
