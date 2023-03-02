@@ -1,19 +1,10 @@
-import {
-    Button,
-    Card,
-    CardContent,
-    CardActions,
-    TextField,
-} from '@mui/material'
+import { Button, Card, CardContent, CardActions } from '@mui/material'
 import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './ProductsListItem.scss'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { useAppSelector } from 'redux/hooks'
-
-
-
 
 type Props = {
     id: number
@@ -46,12 +37,11 @@ const ProductsListItem = ({
     }
 
     const isLiked = useAppSelector((state) => state.productsLikeState[id])
- 
 
     return (
         <Card variant="outlined" className="product">
             <CardContent>
-            <Button variant="outlined">
+                <Button variant="outlined">
                     {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                 </Button>
 
