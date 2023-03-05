@@ -7,10 +7,19 @@ import { Route, Routes } from 'react-router-dom'
 import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
 import CheckoutPage from 'pages/Checkout/CheckoutPage'
+import { useAppDispatch } from 'redux/hooks'
+import { fetchProducts } from 'redux/ProductsReducer'
+import { useEffect } from 'react'
 
 type Props = {}
 
 const App = (props: Props) => {
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    })
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
