@@ -102,7 +102,9 @@ const Reviews = (props: Props) => {
                         onChange={handleText}
                     />
                 </div>
-                <Button variant="outlined" type='submit'>Send</Button>
+                <Button variant="outlined" type="submit">
+                    Send
+                </Button>
             </form>
         </>
     )

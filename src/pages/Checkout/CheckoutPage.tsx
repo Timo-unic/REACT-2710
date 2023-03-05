@@ -68,7 +68,7 @@ const CheckoutPage = (props: Props) => {
                         onChange={handleAddress}
                     />
                 </div>
-                <button type="submit" >Send</button>
+                <button type="submit">Send</button>
             </form>
         )
     }

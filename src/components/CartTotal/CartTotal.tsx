@@ -13,8 +13,8 @@ type Props = {
 
 const CartTotal = ({
     productsInCart,
-    // productsObject = getProductsObject(productsArray),
-}: Props) => {
+}: // productsObject = getProductsObject(productsArray),
+Props) => {
     const productsArray = useAppSelector((state) => state.products)
     const productsObject: ProductsObject = getProductsObject(productsArray)
     return (
