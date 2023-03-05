@@ -1,5 +1,5 @@
 import { useAppSelector } from 'redux/hooks'
-import productsArray, { getProductsObject, Product } from 'utils/productsArray'
+import { getProductsObject, Product } from 'utils/productsArray'
 
 type ProductsObject = {
     [id: number]: Product
